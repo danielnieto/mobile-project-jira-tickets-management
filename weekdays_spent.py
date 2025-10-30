@@ -38,7 +38,11 @@ if __name__ == "__main__":
         print("Please make sure you use the YYYY-MM-DD format.", file=sys.stderr)
         sys.exit(1)
 
-    business_days = calculate_weekdays(start_date, end_date)
+    try:
+        business_days = calculate_weekdays(start_date, end_date)
+    except ValueError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
 
     print(f"Start Date: {start_date.strftime(OUTPUT_DATE_FORMAT)}")
     print(f"End Date:   {end_date.strftime(OUTPUT_DATE_FORMAT)}")
