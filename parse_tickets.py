@@ -15,7 +15,7 @@ class Col(StrEnum):
     ORIGINAL_ESTIMATE = "Original estimate"
     RESOLUTION = "Resolution"
     TIME_SPENT = "Time Spent"
-    STATUS = "Statu"
+    STATUS = "Status"
 
 
 def tickets_with_estimates(df: pd.DataFrame) -> pd.DataFrame:
