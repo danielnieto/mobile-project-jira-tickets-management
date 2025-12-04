@@ -9,6 +9,7 @@ class Status(StrEnum):
     IN_PROGRESS = "In Progress"
     RFR = "RFR"
     OPEN = "Open"
+    ICEBOX = "Icebox"
 
 
 class Col(StrEnum):
@@ -55,7 +56,7 @@ if __name__ == "__main__":
         total = len(df)
         done = len(tickets_with_status(df, Status.DONE))
         not_done = len(tickets_not_done(df))
-        open_status = len(tickets_with_status(df, Status.OPEN))
+        open_status = len(tickets_with_status(df, Status.OPEN)) + len(tickets_with_status(df, Status.ICEBOX))
         todo_status = len(tickets_with_status(df, Status.TODO))
         in_progress_status = len(tickets_with_status(df, Status.IN_PROGRESS))
         rfr_status = len(tickets_with_status(df, Status.RFR))
